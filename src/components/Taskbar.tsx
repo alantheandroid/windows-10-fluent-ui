@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Icon } from "@fluentui/react";
 import {
   ActionCenterIcon,
@@ -25,8 +25,16 @@ function SearchBox() {
 }
 
 function Taskbar() {
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+  });
+
   return (
-    <div className="bg-slate-900 absolute bottom-0 w-full h-10 flex justify-between items-center text-white">
+    <div className="bg-slate-900 absolute bottom-0 w-full h-10 flex justify-between items-center gap-4 text-white">
       <div className="flex justify-center items-center h-full min-w-[25%]">
         <Icon
           iconName="WindowsLogo"
@@ -41,6 +49,15 @@ function Taskbar() {
           <WifiEthernetIcon />
           <USBIcon />
           <Volume2Icon />
+        </div>
+        <div className="flex flex-col justify-center items-center h-full">
+          <p className="text-xs">ITA</p>
+          <p className="text-xs">IT</p>
+        </div>
+        <div className="flex flex-col justify-center items-center h-full">
+          <p className="text-xs">{date.toLocaleTimeString()}</p>
+          <p className="text-xs">{date.toLocaleDateString()}</p>
+        </div>
         <ActionCenterIcon className="h-auto" />
         <div className="h-full w-1 border-l-[1px] border-white"></div>
       </div>
