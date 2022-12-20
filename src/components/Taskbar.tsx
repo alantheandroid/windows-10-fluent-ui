@@ -30,8 +30,9 @@ function Taskbar() {
   useEffect(() => {
     setInterval(() => {
       setDate(new Date());
+      console.log(date);
     }, 1000);
-  });
+  }, []);
 
   return (
     <div className="bg-slate-900 absolute bottom-0 w-full h-10 flex justify-between items-center gap-4 text-white">
@@ -54,7 +55,7 @@ function Taskbar() {
           <p className="text-xs">ITA</p>
           <p className="text-xs">IT</p>
         </div>
-        <div className="flex flex-col justify-center items-center h-full">
+        <div className="flex flex-col justify-center items-center h-full w-max">
           <p className="text-xs">{date.toLocaleTimeString()}</p>
           <p className="text-xs">{date.toLocaleDateString()}</p>
         </div>
