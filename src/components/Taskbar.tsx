@@ -6,9 +6,13 @@ function SearchBox() {
   return (
     <div className="border-slate-500 border-[1.5px] h-full w-full px-4 gap-3 flex justify-start items-center text-white bg-stone-700">
       <SearchIcon />
-      <p className="w-full flex justify-start items-center overflow-hidden h-full">
-        Type here to search
-      </p>
+      <input
+        className="w-full flex justify-start items-center overflow-hidden h-full bg-inherit border-0 outline-0"
+        type="search"
+        name="searchbar"
+        id="searchbar"
+        placeholder="Type here to search"
+      ></input>
     </div>
   );
 }
