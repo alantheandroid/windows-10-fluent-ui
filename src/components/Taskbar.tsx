@@ -1,15 +1,20 @@
 import React from "react";
-// import SearchIcon from "../assets/svg/SearchIcon";
-import WindowsIcon from "../assets/svg/WindowsIcon";
 import { Icon } from "@fluentui/react";
-import { ActionCenterIcon, SearchIcon } from "@fluentui/react-icons-mdl2";
+import {
+  ActionCenterIcon,
+  SearchIcon,
+  Volume2Icon,
+  USBIcon,
+  WifiEthernetIcon,
+  ChevronUpIcon,
+} from "@fluentui/react-icons-mdl2";
 
 function SearchBox() {
   return (
     <div className="border-slate-500 border-2 h-full w-full px-4 gap-4 flex justify-start items-center bg-stone-700">
       <SearchIcon />
       <input
-        className="w-full flex justify-start items-center h-full bg-inherit border-0 outline-0"
+        className="w-full h-full bg-inherit border-0 outline-0"
         type="search"
         name="searchbar"
         id="searchbar"
@@ -30,8 +35,13 @@ function Taskbar() {
         <SearchBox />
       </div>
 
-      <div className="flex justify-center items-center mr-0.5 h-full">
-        <ActionCenterIcon className="h-auto mx-4" />
+      <div className="flex justify-center items-center mr-0.5 h-full gap-4">
+        <div className="flex justify-center items-center h-full gap-2">
+          <ChevronUpIcon className="text-xs" />
+          <WifiEthernetIcon />
+          <USBIcon />
+          <Volume2Icon />
+        <ActionCenterIcon className="h-auto" />
         <div className="h-full w-1 border-l-[1px] border-white"></div>
       </div>
     </div>
